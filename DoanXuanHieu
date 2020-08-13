@@ -1,0 +1,16 @@
+#include <LiquidCrystal.h>
+int t;// khai bao bien nhiet do
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2); // Khai bao cac chan cua LCD vs arduino
+void setup() {
+  lcd.begin(16,2);// Lenh bat dau in len LCD
+  lcd.print("Nhiet do la");
+  
+ 
+}
+void loop() {
+ 
+ t=map(analogRead(A0),0,1023,0,5000)/10; 
+ lcd.setCursor(0,1);
+ lcd.print(t);
+ lcd.print(" Do C");
+}
